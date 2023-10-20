@@ -1,8 +1,6 @@
-## Some useful commands
+## Installation and some useful commands
 
-### Prerequisites
-1. sudo pip install ruff
-2. sudo pip install python-lsp-server
+File pyproject.toml should be copied to user's home directory
 
 ### To reset the environment
 

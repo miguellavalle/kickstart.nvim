@@ -38,22 +38,4 @@ local on_attach = function(_, bufnr)
   end, { desc = 'Format current buffer with LSP' })
 end
 
-require("lspconfig").pylsp.setup {
-  capabilities = cmp_capabilities,
-  on_attach = on_attach,
-}
-
-return {
-  { "nvimtools/none-ls.nvim",
-  dependencies = { "nvim-lua/plenary.nvim" },
-  config = function()
-    local null_ls = require("null-ls")
-
-    null_ls.setup({
-      sources = {
-        null_ls.builtins.diagnostics.ruff,
-      }
-    })
-  end
-  }
-}
+return {}

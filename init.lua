@@ -485,6 +485,21 @@ local servers = {
       telemetry = { enable = false },
     },
   },
+  ruff_lsp = {},
+  pylsp = {
+    settings = {
+      pylsp = {
+        plugins = {
+          pyflakes = { enabled = true },
+          maccabe = { enabled = true },
+          pycodestyle = { enabled = true },
+          autopep8 = { enabled = false },
+          yapf = { enabled = false },
+          jedi_completion = { fuzzy = true },
+        },
+      },
+    },
+  },
 }
 
 -- Setup neovim lua configuration
