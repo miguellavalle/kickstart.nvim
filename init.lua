@@ -474,7 +474,15 @@ require('mason-lspconfig').setup()
 local servers = {
   -- clangd = {},
   -- gopls = {},
-  -- pyright = {},
+  --pyright = {
+  --  settings = {
+  --    python = {
+  --      analysis = {
+  --        typeCheckingMode = "off",
+  --      },
+  --    },
+  --  },
+  --},
   -- rust_analyzer = {},
   -- tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
@@ -490,12 +498,18 @@ local servers = {
     settings = {
       pylsp = {
         plugins = {
-          pyflakes = { enabled = true },
-          maccabe = { enabled = true },
-          pycodestyle = { enabled = true },
+          pyflakes = { enabled = false },
+          maccabe = { enabled = false },
+          pycodestyle = { enabled = false },
           autopep8 = { enabled = false },
           yapf = { enabled = false },
-          jedi_completion = { fuzzy = true },
+          jedi_completion = {
+            enabled = true,
+            include_class_objects = true,
+            include_function_objects = true,
+            fuzzy = true,
+            eager = true,
+          },
         },
       },
     },
